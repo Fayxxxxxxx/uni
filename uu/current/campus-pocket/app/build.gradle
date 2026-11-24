@@ -1,0 +1,30 @@
+plugins {
+    id 'com.android.application'
+}
+android {
+    namespace 'dev.campuspocket.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'dev.campuspocket.app.observer.releasefix'
+        minSdk 26
+        targetSdk 34
+        versionCode 27
+        versionName '2.0.4'
+    }
+
+    // The original 2.0.2 release certificate's private key is not available.
+    // Make debug builds install alongside it instead of failing with a
+    // signature mismatch or asking users to uninstall and lose configuration.
+    buildTypes {
+        debug {
+            applicationIdSuffix '.debug'
+            versionNameSuffix '-debug'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}

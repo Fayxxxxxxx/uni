@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">校园随练修订版</string>
+    <string name="service_name">校园随练修订版 · U听说</string>
+    <string name="service_description">在 U校园前台显示 U听说状态。由你启动口语训练后，可在当前训练页面操作题卡和录音控件。你可以随时在浮窗停止。</string>
+    <style name="AppTheme" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">#F8F8FC</item>
+        <item name="android:navigationBarColor">#FFFFFF</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowBackground">#F8F8FC</item>
+        <item name="android:colorAccent">#4B3FC8</item>
+    </style>
+</resources>

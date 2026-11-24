@@ -1,0 +1,30 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <queries>
+        <package android:name="cn.unipus.cloud"/>
+        <package android:name="cn.unipus.ucampus.student"/>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE"/>
+        </intent>
+    </queries>
+    <application android:label="@string/app_name" android:icon="@drawable/icon_app"
+        android:theme="@style/AppTheme" android:allowBackup="false" android:usesCleartextTraffic="false">
+        <activity android:name="dev.campuspocket.app.TrainingSettingsActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="dev.campuspocket.app.VoiceActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="dev.campuspocket.app.USpeakingActivity" android:exported="true" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <service android:name="dev.campuspocket.app.CampusService" android:label="@string/service_name"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" android:exported="true">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/campus_service"/>
+        </service>
+    </application>
+</manifest>
